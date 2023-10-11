@@ -1,0 +1,15 @@
+process.on('multipleResolves', (type, reason, promise) => {
+    console.log(`Erros detectados: \n` + type, reason, promise)
+})
+process.on('unhandledRejection', (reason, promise) => {
+    console.log(`Erro detectado: \n ${ reason, promise}`)
+})
+process.on('uncaughtException', (error, origin) => {
+    console.log(`Erro detectado: \n ${ error, origin}`)
+})
+process.on('uncaughtExceptionMonitor', (error, origin) => {
+    console.log(`Erro detectado: \n ${ error, origin}`)
+})
+
+
+console.log(`Gera Erro: Carregado com sucesso`)

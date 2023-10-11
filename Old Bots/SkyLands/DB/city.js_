@@ -1,0 +1,63 @@
+const mysql = require('mysql2/promise')
+const config = require('../config.json')
+const client = require('../index.js')
+const Client = require('../index.js')
+
+let connected = 0
+async function connect_city() {
+    try {
+        if (connected == 0) {
+            connected = 1
+            console.log("Conectando")
+            const connection2 = await mysql.createConnection({
+                host: config.base.host,
+                user: config.base.user,
+                password: config.base.password,
+                database: config.base.database,
+                connectTimeout: 8*60*60*1000
+            });
+            console.log("Banco de dados da cidade Online");
+            global.connection2 = connection2;
+            return connection2;
+        } else {
+            clearInterval(timer)
+            const conne = await global.connection2
+            var timer = setInterval(function () {
+                conne.query('SELECT * FROM `vrp.users` ORDER BY ID DESC LIMIT 1;')
+            }
+                , 28700000)
+                return global.connection2;
+        }
+    } catch (error) {
+        console.error("Erro na conexão com o banco de dados", error);
+        setTimeout(connect_city(), 5000);
+    }
+}
+ connect_city()
+
+ async function wl(ID, status) {
+    const conne = await connect_city();
+
+    // Liberando WL no servidor 
+    try{
+    const sql1 = 'SELECT * FROM `vrp_users` WHERE id = ?'
+    const values1 = [ID]
+    const [rows] = await conne.query(sql1, values1);
+    if (rows.length != 0) {    
+            const sql2 = 'UPDATE `vrp_users` SET whitelisted = ? WHERE ID = ?;'
+            const values2 = [status, ID]
+            conne.query(sql2, values2)
+            return [`1`]
+    }else return [`0`]
+    
+}catch (err) {
+    if(err = "Can't add new command when connection is in closed state") {   
+         connected = 0
+        await connect_city()
+    }
+
+  return [`Erro` ,err]
+}
+}
+
+module.exports = { wl }

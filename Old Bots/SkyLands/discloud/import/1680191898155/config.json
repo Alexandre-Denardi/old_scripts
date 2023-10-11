@@ -1,0 +1,25 @@
+{
+    "token": "MTA5MTAwNzY1ODQ5ODIxMTg0MQ.GSdf3M.0e-nMU0q_3nYD4pvIYSEm6qYvqwFt_nrcCou6k",
+    "logCall": "1091009971728167063",
+    "main_server": "1002385675867402270",
+    "logEntrada": "1091010275924250714",
+    "logSaida": "1091010275924250714",
+    "msgLog": "1091010351375601695",
+    "registro_chat": "1091010547631259738",
+    "registrado_log": "1002779559684493432",
+    "link_ilegal": "https://discord.gg/JgbcP8mqyz",
+    "super_ticket": "",
+    "staff_id": "",
+
+    "cargos": {
+        "Verificar" : "1082017255417716836",
+        "wl": "1002389644631097475"
+    },
+
+    "db": {
+        "host": "nucleodb.co2rr8itpjoi.us-east-1.rds.amazonaws.com",
+        "user": "xande",
+        "password": "Escola1960",
+        "database": "Medelin"
+    }
+}

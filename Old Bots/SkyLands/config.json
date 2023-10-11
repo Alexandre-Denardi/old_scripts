@@ -1,0 +1,32 @@
+{
+    "token": "MTE0MzIyMzUzOTU0NjE5ODA5Ng.GqlHP5.MqngbBWNf4sj0lfA7XRjMzNbKIoSzwcLEUUOds",
+    "logCall": "1079814329576210613",
+    "main_server": "1143223271395967089",
+    "logEntrada": "1143223356825542858",
+    "logSaida": "1143223356825542858",
+    "msgLog": "1143223356825542858",
+    "wl_chat": "1143223375347597395",
+    "wl_log": "1143224849771282432",
+    "ticket": "1143224991740088440",
+    "cat_tickt": "1143225048480616589",
+    "super_ticket": "",
+    "staff_id": "1143224654882930728",
+
+    "cargos": {
+        "wl": "1143225148313440277"
+    },
+
+    "db": {
+        "host": "nucleodb.cvpqaizm72sz.us-east-1.rds.amazonaws.com",
+        "user": "xande",
+        "password": "Escola1960",
+        "database": "Medelin"
+    },
+
+    "base": {
+        "host": "181.215.254.220",
+        "user": "wl_bot",
+        "password": "1&Hb}u[eAk",
+        "database": "vrp"
+    }
+}
